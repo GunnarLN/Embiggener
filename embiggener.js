@@ -19,26 +19,22 @@ $(document).ready(function() {
 		//get viewport
 		var viewportWidth = $(window).width();
 		var viewportHeight = $(window).height();
+		var viewportRatio = viewportWidth / viewportHeight;
 		
 		//this mess of nested ifs sets the image dimensions relative to the viewport
-		if (imgHeight>=(viewportHeight-100)) {
-			bigHeight = viewportHeight-100;
-			bigWidth = bigHeight*imgRatio;			
-			if (bigWidth>=(viewportWidth-100)) {
-				bigWidth = viewportWidth-100;
-				bigHeight = (1/imgRatio) * bigWidth;
-			}
-			else {}
-		}
-		else {
-			if (imgWidth>=(viewportWidth-100)) {
+		if (imgHeight >= (viewportHeight-100) || imgWidth >= (viewportHeight-100)){
+			if (imgRatio >= viewportRatio){
 				bigWidth = viewportWidth-100;
 				bigHeight = (1/imgRatio) * bigWidth;
 			}
 			else {
-				bigHeight = imgHeight;
-				bigWidth = imgWidth;
+				bigHeight = viewportHeight-100;
+				bigWidth = imgRatio * bigHeight;
 			}
+		}
+		else {
+			bigHeight = imgHeight;
+			bigWidth = imgWidth;
 		}
 		
 		//css friendly strings
