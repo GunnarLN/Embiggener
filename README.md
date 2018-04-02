@@ -1,7 +1,7 @@
 # Embiggener
 A lightweight jQuery image enlarger
 
-This is a very lightweight (and with that, basic) image viewer in javascript/jQuery. Can be demo'd <a href="gunnarnewtonlund.com/arts">here</a>.
+This is a very lightweight (and with that, basic) image viewer in javascript/jQuery.
 
 Installation is just like any other javascript and css files, though be sure to have jQuery.
 
